@@ -34,11 +34,34 @@ def big_o_of_one(n: int):
     return n + n
 
 
+# Different terms for input when func has 2 params - it cannot be marked as O(n) because 2 params
+# and not clear which param is n - a or b?
+# This func is marked as O(a + b)
+def big_o_different_term_sum(a: int, b: int):
+    # O(n)
+    for x in range(a):
+        print(a)
+    # O(n)
+    for y in range(b):
+        print(a)
+
+
+# This func is marked as O(a + b) - because 1 loop is nested
+def big_o_different_term_multiply(a: int, b: int):
+    # O(n)
+    for x in range(a):
+        print(a)
+        for y in range(b):
+            print(a)
+
+
 if __name__ == '__main__':
     # O(n) - O(10)
     # big_o(n=10)
     big_osquare(n=10)
     big_osquare(n=10)
     big_o_of_one(n=2)
+    big_o_different_term_sum(a=1, b=3)
+    big_o_different_term_multiply(a=1, b=3)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
