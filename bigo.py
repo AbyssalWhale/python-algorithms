@@ -1,10 +1,10 @@
-#O(n)
+#O(n) - propoprtional
 def big_o(n: int):
     for x in range(n):
         print(x)
 
 
-#O(n^2) - n in square
+#O(n^2) - loop withing loop - n in square
 # Less efficient in comparison to big_o in terms of time complexity
 def big_osquare(n: int):
     for x in range(n):
@@ -27,7 +27,7 @@ def big_o_nondominance(n: int):
         print(a)
 
 
-# 0(1) - case when N is increasing but the number of operations stays the same aka constant time.
+# 0(1) - constant - case when N is increasing but the number of operations stays the same aka constant time.
 # It does not matter if we have more sum operations like: n + n + n + etc
 # This is the most efficient Big O as N increases but number of operations static.
 def big_o_of_one(n: int):
@@ -53,6 +53,7 @@ def big_o_different_term_multiply(a: int, b: int):
         print(a)
         for y in range(b):
             print(a)
+
 
 # Big O list - O(n) is number of items in list/array O(1) - operation can be marked when we add/remove item to end of
 # list. O(n) - operation can be marked when we add/remove item to beginning/middle of list as we are changing sequence -
