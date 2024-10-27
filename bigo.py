@@ -54,6 +54,13 @@ def big_o_different_term_multiply(a: int, b: int):
         for y in range(b):
             print(a)
 
+# Big O list - O(n) is number of items in list/array O(1) - operation can be marked when we add/remove item to end of
+# list. O(n) - operation can be marked when we add/remove item to beginning/middle of list as we are changing sequence -
+# indexes needs to be updated as well. So more operations
+def big_0_list(number: int):
+    my_list = [1, 2, 3, 4]
+    my_list.append(number)
+
 
 if __name__ == '__main__':
     # O(n) - O(10)
