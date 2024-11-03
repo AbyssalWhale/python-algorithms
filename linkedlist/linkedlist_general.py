@@ -47,7 +47,7 @@ def what_is_node():
 
 
 if __name__ == '__main__':
-    list_vs_linkedlist()
-    what_is_node()
+    # list_vs_linkedlist()
+    # what_is_node()
     my_linked_list = LinkedList(4)
-    print(f"my linked list head {my_linked_list.head.value}")
+    my_linked_list.print_list()
