@@ -51,7 +51,10 @@ if __name__ == '__main__':
     what_is_node()
 
     # My linked list
+    print("-" * 10, "MY LINKED LIST LIST", "-" * 10)
     my_linked_list = LinkedList(4)
     my_linked_list.append(2)
     my_linked_list.append(1)
+    my_linked_list.append(5)
+    my_linked_list.pop()
     my_linked_list.print_list()
