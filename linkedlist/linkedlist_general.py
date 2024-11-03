@@ -1,5 +1,7 @@
 from tabulate import tabulate
 
+from linkedlist import LinkedList
+
 GREEN = "\033[92m"
 RED = "\033[91m"
 RESET = "\033[0m"
@@ -44,7 +46,8 @@ def what_is_node():
     print(f"example {example}")
 
 
-
 if __name__ == '__main__':
     list_vs_linkedlist()
     what_is_node()
+    my_linked_list = LinkedList(4)
+    print(f"my linked list head {my_linked_list.head.value}")
