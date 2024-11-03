@@ -50,4 +50,6 @@ if __name__ == '__main__':
     # list_vs_linkedlist()
     # what_is_node()
     my_linked_list = LinkedList(4)
+    my_linked_list.append(2)
+    my_linked_list.append(1)
     my_linked_list.print_list()
