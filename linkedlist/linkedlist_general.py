@@ -47,8 +47,10 @@ def what_is_node():
 
 
 if __name__ == '__main__':
-    # list_vs_linkedlist()
-    # what_is_node()
+    list_vs_linkedlist()
+    what_is_node()
+
+    # My linked list
     my_linked_list = LinkedList(4)
     my_linked_list.append(2)
     my_linked_list.append(1)
