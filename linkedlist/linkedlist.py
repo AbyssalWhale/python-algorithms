@@ -75,8 +75,6 @@ class LinkedList:
         """
         Removes node from the beginning
         """
-        # 1. 0 nodes
-        # 2. 1 node
         if self.length == 0 or self.length == 1:
             self.head = None
             self.tail = None
@@ -89,18 +87,18 @@ class LinkedList:
             self.length -= 1
             return removed_item
 
-    def pop_first_2(self):
-        if self.length == 0:
+    def get(self, index):
+        if index < 0 or index > self.length:
             return None
-        temp = self.head
-        self.head = self.head.next
-        temp.next = None
-        self.length -= 1
-        if self.length == 0:
-            self.tail = None
-        return temp
+        else:
+            item = self.head
+            for _ in range(index):
+                item = item.next
+            return item
 
-
-
-
-
+    def set_index_value(self, index, value):
+        temp = self.get(index=index)
+        if temp:
+            temp.value = value
+            return True
+        return False
