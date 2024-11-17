@@ -1,4 +1,5 @@
 from imghdr import tests
+from logging import fatal
 
 
 class Node:
@@ -15,6 +16,9 @@ class LinkedList:
         self.length = 1
 
     def print_list(self):
+        """
+        print out entire list
+        """
         if self.length == 0:
             print("list is empty")
         temp = self.head
@@ -88,6 +92,9 @@ class LinkedList:
             return removed_item
 
     def get(self, index):
+        """
+        get Node
+        """
         if index < 0 or index > self.length:
             return None
         else:
@@ -97,8 +104,60 @@ class LinkedList:
             return item
 
     def set_index_value(self, index, value):
+        """
+        set Node value
+        """
         temp = self.get(index=index)
         if temp:
             temp.value = value
             return True
         return False
+
+    def insert(self, index, value):
+        """
+        Insert new Node at specified index
+        """
+        if self.length == 0 or self.length == 1:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        previous = self.get(index=index - 1)
+        if previous:
+            new_next = previous.next
+            previous.next = Node(value=value)
+            previous.next.next = new_next
+            return True
+        return False
+
+    def remove(self, index):
+        """
+        remove Node at specified index
+        """
+        if self.length == 0 or index >= self.length:
+            return None
+        if index == self.length - 1:
+            return self.pop()
+        if index == 0:
+            return self.pop_first()
+        parent = self.get(index=index - 1)
+        node_to_remove = parent.next
+        parent.next = node_to_remove.next
+        self.length -= 1
+        return node_to_remove
+
+    def reverse(self):
+        """
+        reverse list in opposite order
+        """
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp = after
