@@ -45,12 +45,7 @@ def what_is_node():
     }
     print(f"example {example}")
 
-
-if __name__ == '__main__':
-    list_vs_linkedlist()
-    what_is_node()
-
-    # My linked list
+def pop_test():
     print("-" * 10, "MY LINKED LIST LIST - POP TEST", "-" * 10)
     my_linked_list = LinkedList(4)
     my_linked_list.append(2)
@@ -58,26 +53,78 @@ if __name__ == '__main__':
     my_linked_list.append(5)
     my_linked_list.pop()
     my_linked_list.print_list()
+
+def prepend_test():
     print("-" * 10, "MY LINKED LIST LIST - PREPEND TEST", "-" * 10)
+    my_linked_list = LinkedList(4)
+    my_linked_list.append(2)
+    my_linked_list.append(1)
+    my_linked_list.append(5)
     my_linked_list.prepend(number=0)
     my_linked_list.print_list()
+
+def pop_first_test():
     print("-" * 10, "MY LINKED LIST LIST - POP FIRST TEST", "-" * 10)
     my_linked_list_2 = LinkedList(1)
     my_linked_list_2.append(2)
     print(my_linked_list_2.pop_first())
     print(my_linked_list_2.pop_first())
     my_linked_list_2.print_list()
-    print("-" * 10, "MY LINKED LIST LIST - GET TEST", "-" * 10)
-    my_linked_list_3 = LinkedList(0)
-    my_linked_list_3.append(1)
-    my_linked_list_3.append(2)
-    my_linked_list_3.append(3)
-    print(my_linked_list_3.get(0))
-    print("-" * 10, "MY LINKED LIST LIST - SET TEST", "-" * 10)
-    my_linked_list_3 = LinkedList(0)
-    my_linked_list_3.append(1)
-    my_linked_list_3.append(2)
-    my_linked_list_3.append(3)
-    my_linked_list_3.set_index_value(index=1, value=5)
-    my_linked_list_3.print_list()
 
+def get_test():
+    print("-" * 10, "MY LINKED LIST LIST - GET TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(2)
+    my_linked_list.append(3)
+    print(my_linked_list.get(0))
+
+def set_test():
+    print("-" * 10, "MY LINKED LIST LIST - SET TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(2)
+    my_linked_list.append(3)
+    my_linked_list.set_index_value(index=1, value=5)
+    my_linked_list.print_list()
+def insert_test():
+    print("-" * 10, "MY LINKED LIST LIST - INSERT TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    my_linked_list.insert(index=2, value=2)
+    my_linked_list.print_list()
+
+def remove_test():
+    print("-" * 10, "MY LINKED LIST LIST - REMOVE TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    my_linked_list.remove(index=2)
+    my_linked_list.print_list()
+
+def reverse_test():
+    print("-" * 10, "MY LINKED LIST LIST - REVERSE TEST", "-" * 10)
+    my_linked_list_reverse = LinkedList(0)
+    my_linked_list_reverse.append(1)
+    my_linked_list_reverse.append(3)
+    my_linked_list_reverse.append(4)
+    my_linked_list_reverse.reverse()
+    my_linked_list_reverse.print_list()
+
+
+if __name__ == '__main__':
+    list_vs_linkedlist()
+    what_is_node()
+
+    # My linked list
+    pop_test()
+    prepend_test()
+    pop_first_test()
+    get_test()
+    set_test()
+    insert_test()
+    remove_test()
+    reverse_test()
