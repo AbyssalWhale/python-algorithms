@@ -161,3 +161,27 @@ class LinkedList:
             temp.next = before
             before = temp
             temp = after
+
+    def find_middle(self):
+        """
+        returns middle node. If the linked list has an even number of nodes, return the first node of the second half of the list.
+        """
+        slow = self.head
+        fast = self.head
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+
+    def has_loop(self):
+        """
+        returns True if there is a cycle or loop present in the linked list.
+        """
+        slow = self.head
+        fast = self.head
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
