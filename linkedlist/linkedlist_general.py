@@ -114,6 +114,58 @@ def reverse_test():
     my_linked_list_reverse.reverse()
     my_linked_list_reverse.print_list()
 
+def find_middle_test():
+    print("-" * 10, "MY LINKED LIST LIST - FIND MIDDLE TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    print(f"middle value: {my_linked_list.find_middle().value}")
+
+
+def has_loop_test():
+    print("-" * 10, "MY LINKED LIST LIST - HAS LOOP TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    print(f"has loop?: {my_linked_list.has_loop()}")
+    my_linked_list = LinkedList(1)
+    my_linked_list.append(2)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    my_linked_list.tail.next = my_linked_list.head
+    print(f"has loop?: {my_linked_list.has_loop()}")
+
+def find_from_end():
+    print("-" * 10, "MY LINKED LIST LIST - FIND FROM END TEST", "-" * 10)
+    my_linked_list = LinkedList(0)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+    my_linked_list.append(4)
+    my_linked_list.append(5)
+    print(find_kth_from_end(my_linked_list, 2).value)
+
+
+def find_kth_from_end(ll, k):
+    """
+    return node from the end by specified index
+    :param ll: - your linked list
+    :param k: - index from end to return
+    :return:
+    """
+    slow = fast = ll.head
+    for _ in range(k):
+        if fast is None:
+            return None
+        fast = fast.next
+
+    while fast:
+        slow = slow.next
+        fast = fast.next
+
+    return slow
+
 
 if __name__ == '__main__':
     list_vs_linkedlist()
@@ -128,3 +180,6 @@ if __name__ == '__main__':
     insert_test()
     remove_test()
     reverse_test()
+    find_middle_test()
+    has_loop_test()
+    find_from_end()
